@@ -1,0 +1,35 @@
+{
+  "manifest_version": 2,
+  "name": "Relative product finder",
+  "description": "Displays relative products",
+  "version": "1.0",
+  "icons": {
+      "16": "icon.png",
+      "32": "icon.png",
+      "48": "icon.png",
+      "128": "icon.png"
+  },
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_popup": "popup.html",
+    "default_title": "Click here!"
+  },
+  "permissions": [
+    "tabs",
+    "http://localhost:3000/products/*",
+    "http://*.supplythis.com/products/*"
+  ]
+  ,
+  "content_scripts": [
+    {
+      "matches": ["http://localhost:3000/products/*", "http://*.supplythis.com/products/*"],
+      "js": ["content_script.js"],
+      "css": ["insert.css"],
+      "run_at": "document_end"
+    }
+  ],
+    "background": {
+      "scripts": ["background.js"],
+      "persistent": false
+    }
+}
