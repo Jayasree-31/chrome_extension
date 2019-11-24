@@ -23,9 +23,9 @@
   "content_scripts": [
     {
       "matches": ["http://localhost:3000/products/*", "http://*.supplythis.com/products/*"],
-      "js": ["content_script.js"],
-      "css": ["insert.css"],
-      "run_at": "document_end"
+      "js": [ "jquery-3.2.1.min.js", "bootstrap.min.js", "content_script.js"],
+      "css": ["bootstrap.min.css", "insert.css"],
+      "run_at": "document_start"
     }
   ],
     "background": {
